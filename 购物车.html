@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+   <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: rgb(240, 241, 242);
+
+    }
+    .box{
+        height: 100%;
+        width: 650px;
+        background-color: rgb(240, 241, 242);
+        padding:0 50px;
+        margin: auto;
+    }
+    .tit{
+        height: 30px;
+        width:100%;
+        line-height: 30px;
+        font-weight: 600;
+        border-bottom: 1px rgb(202, 204, 204) solid;
+    }
+    .goods{
+        height: 80px;
+        padding: 5px;
+        border-bottom: 1px rgb(202, 204, 204) solid;
+
+    }
+    .goods img{
+        height: 25px;
+    }
+    .goods>div{
+        display: inline-block;
+        
+    }
+    .right{
+        float: right;
+    }
+    .goods .notselected .selected{
+        width: 25px;
+        margin-top: 25px;
+    }
+   
+    .details .money{
+        margin-top: 17px;
+        color: #d81e06;
+    }
+    .details{
+        margin-left: 25px;
+    }
+    .delete {
+        margin-right: 10px;
+        border: 0px;
+    }
+    .deletes{
+       float: right;
+    }
+    .delete img{
+        height: 20px;
+    }
+
+    .clear{
+        clear: both;
+    }
+    .right input{
+        width: 38px;
+        height: 24px;
+        margin: 0;
+        padding: 0;
+        border:1px rgb(202, 204, 204) solid;
+        outline: none;
+        background-color: white;
+        text-align: center;
+    }
+    .decrease{
+        float: right;
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+    .decrease button{
+        width: 38px;
+        height:25px;
+
+    }   
+    button{
+        margin: 0;
+        padding: 0;
+        border: 1px rgb(202, 204, 204) solid;
+        outline: none;
+    }
+    .bottom{
+        height: 40px;
+        background-color:white;
+        margin-top:100px;
+        /* line-height: 40px; */
+        border:1px rgb(202, 204, 204) solid;
+    }
+    .bottom div{
+        display: inline-block;
+    }
+    .bottom button{
+        height: 41px;
+        width: 80px;
+        background-color: #b2b0b0;
+        color: white;
+        font-weight: 600px;
+        font-size: 15px;
+        border: 1px solid ;
+    }
+    .quantity img{
+        margin-top: 4px;
+    }
+    .quantity{
+        position: relative;
+        width:150px ;
+    }
+    .quantity span{
+        color: rgb(152, 153, 153);
+        position: absolute;
+        top: 10px;
+        left: 50px;
+
+    }
+    .total{
+        color: #d81e06;
+        font-weight: 600;
+    }
+   </style>
+</head>
+<body>
+    <div class="box">
+        <div class="list">
+            <p class="tit">我的购物车</p>
+            <div class="goods">
+                <img src="./img/unselect.png" alt="" class="unselect">
+                <div class="details">
+                    <p class="name">酷冷至尊(Cooler Master)T610p CPU风冷散热器</p>
+                    <p class="money">￥296</p>
+                </div>
+                <div class="right clear" >
+                    <div  class="deletes clear">
+                    <button class="delete clear"><img src="./img/删除.png" alt=""  class="remove"></button>
+                    </div>
+                    <br>
+                    <div class="decrease">
+                        <button>-</button><input type="text" value="1" ><button>+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="goods">
+                <img  src="./img/unselect.png" alt="" class="unselect">
+                <div class="details">
+                    <p class="name">酷冷至尊(Cooler Master)T610p CPU风冷散热器</p>
+                    <p class="money">￥596</p>
+                </div>
+                <div class="right clear" >
+                    <div  class="deletes clear">
+                    <button class="delete clear"><img src="./img/删除.png" alt=""  class="remove"></button>
+                    </div>
+                    <br>
+                    <div class="decrease">
+                        <button>-</button><input type="text"  value="1"><button>+</button>
+                    </div>
+                </div>
+            </div>  
+            <div class="goods">
+                <img src="./img/unselect.png" alt="" class="unselect">
+                <div class="details">
+                    <p class="name">酷冷至尊(Cooler Master)T610p CPU风冷散热器</p>
+                    <p class="money">￥3396</p>
+                </div>
+                <div class="right clear" >
+                    <div  class="deletes clear">
+                    <button class="delete clear"><img src="./img/删除.png" alt=""  class="remove"></button>
+                    </div>
+                    <br>
+                    <div class="decrease">
+                        <button>-</button><input type="text"  value="1"><button>+</button>
+                    </div>
+                </div>
+            </div>  
+            <div class="goods">
+                <img src="./img/unselect.png" alt="" class="unselect">
+                <div class="details">
+                    <p class="name">酷冷至尊(Cooler Master)T610p CPU风冷散热器</p>
+                    <p class="money">￥206</p>
+                </div>
+                <div class="right clear" >
+                    <div  class="deletes clear">
+                    <button class="delete clear"><img src="./img/删除.png" alt="" class="remove"></button>
+                    </div>
+                    <br>
+                    <div class="decrease">
+                        <button>-</button><input type="text" value="1"><button>+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="quantity">
+                <img src="./img/unselect.png" alt="" class="unselect">
+                <span>已选(0)</span>
+            </div>
+            <div class="right clear">
+                <span class="total">￥0.00</span>
+                <button>结算</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        //加减按钮
+        $(".decrease button").click(function(){
+            var num = Number($(this).siblings("input").val())
+            if($(this).text()=="-"){
+                if($(this).next().val()=="1"){
+                    $(this).attr("disabled","disabled")
+                }
+                $(this).next().val(--num)
+            }else{
+                if ($(this).prev().val()=="0") {
+                    $(this).siblings("button").attr("disabled",false)
+                }
+                $(this).prev().val(++num)
+            }
+            console.log($(this).text());
+            totalPrice()
+
+        })
+        //圈
+        $(".list img").click(function(){
+            var cla=$(this).attr("class");
+            if(cla=="unselect"){
+                $(this).attr({
+                    "class":"select",
+                    "src":"./img/select.png" 
+                })
+            }else{
+                $(this).attr({
+                    "class":"unselect",
+                    "src":"./img/unselect.png" 
+                })
+             }
+             //判断
+             judge()
+             
+            totalPrice()
+
+        })
+        $(".quantity img").click(function() {
+            var cla = $(this).attr("class")
+            if(cla=="unselect"){
+                $(".quantity span").text("全选")
+                $(this).attr({
+                    "class":"select",
+                    "src":"./img/select.png" 
+                })
+                $(".goods .unselect").attr({
+                    "class":"select",
+                    "src":"./img/select.png" 
+                })
+                $(".bottom button").css("backgroundColor","#d81e06")
+
+            }else{
+                $(this).attr({
+                    "class":"unselect",
+                    "src":"./img/unselect.png" 
+                })
+                $(".goods .select").attr({
+                    "class":"unselect",
+                    "src":"./img/unselect.png" 
+                })
+                $(".bottom button").css("backgroundColor","rgb(202, 204, 204)")
+            }
+            totalPrice()
+        })
+        // 删除
+        $(".remove").click(function(){
+            var num = $(".goods .select").length
+            $(this).parents(".goods").remove()
+            judge()
+            totalPrice()
+        })
+        function totalPrice(){
+            var totals=0;
+            $(".goods .select").each(function() {
+                var moneys=Number($(this).siblings(".details").children(".money").text().substring(1)) 
+                var amount=Number($(this).siblings(".right").children(".decrease").children("input").val()) 
+                totals += moneys*amount
+            });
+            $(".bottom .total").text("￥"+totals)
+        }
+        function judge(){
+                var num = $(".goods .select").length
+              if(num){
+                if(num==$(".goods").length){
+                    $(".quantity span").text("全选")
+                    $(".quantity img").attr({
+                        "src":"./img/select.png",
+                        "class":"select"
+                })
+                }else{
+                    $(".quantity span").text("已选("+num+")")
+                    $(".quantity img").attr({
+                        "src":"./img/unselect.png",
+                        "class":"unselect"
+
+                    })
+                }
+                $(".bottom button").css("backgroundColor","#d81e06")
+                }
+                else{
+                        $(".quantity span").text("全选")
+                        $(".bottom button").css("backgroundColor","rgb(202, 204, 204)")
+                }
+             }
+    </script>
+</body>
+</html>
